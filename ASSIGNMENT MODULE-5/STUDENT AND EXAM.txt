@@ -1,0 +1,27 @@
+=> 1. Create table name : student and exam
+
+-> Database : CREATE DATABASE first 
+
+-> Table student :
+CREATE TABLE student
+( 
+    Rollno int PRIMARY KEY AUTO_INCREMENT,
+    Name varchar(30),
+    Branch varchar(30)
+)
+-> Insert value :
+INSERT INTO student(Name,Branch) VALUES ("Jay","Computer science");
+INSERT INTO student(Name,Branch) VALUES ("Suhani","Electronics and communication");
+INSERT INTO student(Name,Branch) VALUES ("Kirti","Electronics and communication")
+
+-> Table exam :
+CREATE TABLE exam
+(
+    S_code varchar(30) PRIMARY KEY,
+    marks int,
+    P_code varchar(30),
+    
+    Rollno_fk int,
+    FOREIGN KEY(Rollno_fk) REFERENCES student(Rollno)
+)
+

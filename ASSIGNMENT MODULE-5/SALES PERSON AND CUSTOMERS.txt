@@ -1,0 +1,49 @@
+11. Create table given below: Salesperson and Customer
+=>Database : third
+
+=> Creation of database : CREATE DATABASE third
+=> creation of table : salesperson
+CREATE TABLE salesperson
+(
+    S_NO int PRIMARY KEY,
+    S_NAME varchar(40),
+    CITY VARCHAR(30),
+    COMMISSION int
+)
+
+=> Insertation of data :
+INSERT INTO salesperson(S_NO,S_NAME,CITY,COMMISSION) VALUES(1001,"Peel","London",.12);
+INSERT INTO salesperson(S_NO,S_NAME,CITY,COMMISSION) VALUES(1002,"Serres","San jose",.13);
+INSERT INTO salesperson(S_NO,S_NAME,CITY,COMMISSION) VALUES(1004,"Motika","London",.11);
+INSERT INTO salesperson(S_NO,S_NAME,CITY,COMMISSION) VALUES(1007,"Rafkin","Barcelona",.15);
+INSERT INTO salesperson(S_NO,S_NAME,CITY,COMMISSION) VALUES(1003,"Axrirod","New York",.1);
+
+=> Creation of table : Customer
+CREATE TABLE customer
+(
+    C_NO int PRIMARY KEY,
+    C_NAME varchar(30),
+    C_CITY varchar(30),
+    RATING int,
+    
+    S_NO_fk int,
+    FOREIGN KEY(S_NO_fk) REFERENCES salesperson(S_NO)
+)
+
+=> Insertation of data:
+INSERT INTO customer(C_NO,C_NAME,C_CITY,RATING,S_NO_fk) VALUES (201,"Hoffman","London",100,1001);
+INSERT INTO customer(C_NO,C_NAME,C_CITY,RATING,S_NO_fk) VALUES (202,"Giovanne","Roe",200,1003);
+INSERT INTO customer(C_NO,C_NAME,C_CITY,RATING,S_NO_fk) VALUES (203,"Liu","San Jose",300,1002);
+INSERT INTO customer(C_NO,C_NAME,C_CITY,RATING,S_NO_fk) VALUES (204,"Grass","Barcelona",100,1002);
+INSERT INTO customer(C_NO,C_NAME,C_CITY,RATING,S_NO_fk) VALUES (206,"Clemens","London",300,1007);
+INSERT INTO customer(C_NO,C_NAME,C_CITY,RATING,S_NO_fk) VALUES (207,"Pereira","Roe",100,1004);
+
+14.Names and cities of all salespeople in London with commission above 0.12
+=> SELECT * FROM salesperson WHERE COMMISSION=0.12
+
+16. All salespeople with commission between 0.10 and 0.12.
+=> SELECT * FROM salesperson WHERE COMMISSION BETWEEN 0.10 AND 0.12 
+
+17. All customers excluding those with rating <= 100 unless they are located 
+in Rome.
+=>SELECT * FROM customer WHERE RATING <= 100 

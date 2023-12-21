@@ -1,0 +1,63 @@
+2. Create table : Employee and Incetive.
+
+->Database : Second
+
+->Table Employee:
+CREATE DATABASE second 
+
+-> Create table : Employee
+CREATE TABLE employee
+(
+    Employee_id int PRIMARY KEY AUTO_INCREMENT,
+    First_name varchar(30),
+    Last_name varchar(30),
+    Salary int,
+    Joining_Date datetime,
+    Department varchar(30)
+)
+
+-> Insertation of data :
+
+INSERT INTO employee(Employee_id,First_name,Last_name,Salary,Joining_Date,Department) VALUES(1,"John","Abraham",1000000,"13-01-01 12:00:00 AM","Banking");
+INSERT INTO employee(Employee_id,First_name,Last_name,Salary,Joining_Date,Department) VALUES(2,"Michael","Clarke",800000,"13-01-01 12:00:00 AM","Insurance");
+INSERT INTO employee(Employee_id,First_name,Last_name,Salary,Joining_Date,Department) VALUES(3,"Roy","Thomas",700000,"13-02-01 12:00:00 AM","Banking");
+INSERT INTO employee(Employee_id,First_name,Last_name,Salary,Joining_Date,Department) VALUES(4,"Tom","Jose",600000,"13-02-01 12:00:00 AM","Insurance");
+INSERT INTO employee(Employee_id,First_name,Last_name,Salary,Joining_Date,Department) VALUES(5,"Jerry","Pinto",650000,"13-02-01 12:00:00 AM","Insurance");
+INSERT INTO employee(Employee_id,First_name,Last_name,Salary,Joining_Date,Department) VALUES(6,"Philip","Mathew",750000,"13-01-01 12:00:00 AM","Services");
+INSERT INTO employee(Employee_id,First_name,Last_name,Salary,Joining_Date,Department) VALUES(7,"Testname1","123",650000,"13-01-01 12:00:00 AM","Services");
+INSERT INTO employee(Employee_id,First_name,Last_name,Salary,Joining_Date,Department) VALUES(8,"Testname2","Lname%",600000,"13-02-01 12:00:00 AM","Insurance");
+
+-> Table Incetive : 
+
+CREATE TABLE incentive
+(
+    Emp_ref_id int,
+    Incentive_date date,
+    Incentive_amount int
+)
+
+-> Insertation of data :
+INSERT INTO incentive(Emp_ref_id,Incentive_date,Incentive_amount) VALUES(1,"13-02-01",5000);
+INSERT INTO incentive(Emp_ref_id,Incentive_date,Incentive_amount) VALUES(2,"13-02-01",3000);
+INSERT INTO incentive(Emp_ref_id,Incentive_date,Incentive_amount) VALUES(3,"13-02-01",4000);
+INSERT INTO incentive(Emp_ref_id,Incentive_date,Incentive_amount) VALUES(1,"13-01-01",4500);
+INSERT INTO incentive(Emp_ref_id,Incentive_date,Incentive_amount) VALUES(2,"13-01-01",3500);
+
+3. Get First_Name from employee table using Tom name “Employee Name”.
+=>SELECT * FROM employee WHERE Employee_id=4
+
+4. Get FIRST_NAME, Joining Date, and Salary from employee table.
+=>
+
+
+5. Get all employee details from the employee table order by First_Name
+   Ascending and Salary descending.
+=>SELECT * FROM employee ORDER BY First_name ASC
+  SELECT * FROM employee ORDER BY Salary DESC
+
+6.Get employee details fromemployee table whose first name contains ‘J’.
+=> SELECT * FROM employee WHERE First_name LIKE 'J%'
+
+7.Get department wise maximum salary from employee table order by salaryascending?
+=> SELECT * FROM employee GROUP BY Department
+   SELECT * FROM employee ORDER BY Salary ASC
