@@ -1,0 +1,47 @@
+=>ASSESSMENT
+
+=>Creation of Database:
+CREATE DATABASE Assessment
+
+=>Creation of table: salesman
+CREATE TABLE salesman
+(
+    Salesman_id int PRIMARY KEY,
+    Name varchar(30),
+    City varchar(30),
+    Commission float
+ )
+
+=> Insertation of data: 
+INSERT INTO salesman (Salesman_id,Name,City,Commission) VALUES (5001,"James Hoog","New York",0.15);
+INSERT INTO salesman (Salesman_id,Name,City,Commission) VALUES (5002,"Nail Knite","Paris",0.13);
+INSERT INTO salesman (Salesman_id,Name,City,Commission) VALUES (5005,"Pit Alex","London",0.11);
+INSERT INTO salesman (Salesman_id,Name,City,Commission) VALUES (5006,"Mc Lyon","Paris",0.14);
+INSERT INTO salesman (Salesman_id,Name,City,Commission) VALUES (5007,"Paul Adam","Rome",0.13);
+INSERT INTO salesman (Salesman_id,Name,City,Commission) VALUES (5003,"Lauson Hen","San Jose",0.12);
+
+=> Creation of table: customer
+CREATE TABLE customer
+(
+    Customer_id int PRIMARY KEY,
+    Cust_Name varchar(30),
+    C_City varchar(30),
+    Grade int,
+    
+    Salesman_id_fk int,
+    FOREIGN KEY(salesman_id_fk) REFERENCES salesman(Salesman_id)
+)
+
+=> Insertaion of data:
+INSERT INTO customer(Customer_id,Cust_Name,C_City,Grade,Salesman_id_fk) VALUES(3002,"Nick Rimando","New York",100,5001); 
+INSERT INTO customer(Customer_id,Cust_Name,C_City,Grade,Salesman_id_fk) VALUES(3007,"Brad Davis","New York",200,5001); 
+INSERT INTO customer(Customer_id,Cust_Name,C_City,Grade,Salesman_id_fk) VALUES(3005,"Graham Zusi","California",200,5002); 
+INSERT INTO customer(Customer_id,Cust_Name,C_City,Grade,Salesman_id_fk) VALUES(3008,"Julian Green","London",300,5002); 
+INSERT INTO customer(Customer_id,Cust_Name,C_City,Grade,Salesman_id_fk) VALUES(3004,"Fabian Johnson","Paris",300,5006); 
+INSERT INTO customer(Customer_id,Cust_Name,C_City,Grade,Salesman_id_fk) VALUES(3009,"Geoff Cameron","Berlin",100,5003); 
+INSERT INTO customer(Customer_id,Cust_Name,C_City,Grade,Salesman_id_fk) VALUES(3003,"Jozy Altidor","Moscow",200,5007); 
+INSERT INTO customer(Customer_id,Cust_Name,C_City,Grade,Salesman_id_fk) VALUES(3001,"Brad Guzan","London",   ,5005); 
+
+=> join tables:
+SELECT customer.Cust_Name,customer.C_City,salesman.Name,salesman.Commission FROM customer 
+INNER JOIN salesman ON customer.Salesman_id_fk=salesman.Salesman_id
