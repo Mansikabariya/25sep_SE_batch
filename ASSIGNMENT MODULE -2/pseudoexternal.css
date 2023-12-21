@@ -1,0 +1,12 @@
+div
+        {
+            background-color: lightgreen;
+            color: black;
+            padding: 25px;
+            text-align: center;
+        }
+        div:hover
+        {
+            background-color: blueviolet;
+        }
+
