@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "817573489333",
+    "project_id": "newproject-baf04",
+    "storage_bucket": "newproject-baf04.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817573489333:android:31b415b377696e1315acfc",
+        "android_client_info": {
+          "package_name": "com.example.seawind"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMkADm1KVm7lz1Ph3Bpurn8dLiz_BcP04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
